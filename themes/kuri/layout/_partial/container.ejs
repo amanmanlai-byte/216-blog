@@ -40,4 +40,19 @@
      </div> 
     </div> 
 
+    <div class="card" style="margin-top: 1%;"> 
+     <div id="card-content" class="card-content"> 
+      <div style="padding: 10px;">
+       <b style="font-size: 18px;">📝 最近文章</b>
+       <hr style="margin: 10px 0; border: 0; border-top: 1px solid #eee;">
+       <% site.posts.sort('date', -1).each(function(post){ %>
+        <a href="<%= config.root %><%= post.path %>" style="display: block; padding: 8px 0; text-decoration: none; color: #333; border-bottom: 1px solid #f5f5f5;">
+         <div style="font-size: 15px;"><%= post.title %></div>
+         <div style="font-size: 12px; color: #999; margin-top: 4px;"><%= post.date.format('YYYY-MM-DD') %></div>
+        </a>
+       <% }) %>
+      </div> 
+     </div> 
+    </div> 
+
    </div> 
